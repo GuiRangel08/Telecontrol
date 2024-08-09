@@ -19,6 +19,11 @@ class ClientController
     }
 
     public function store(): void {
+        if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $data = [
             'name' => $_POST['name'],
             'cpf' => $_POST['cpf'],
@@ -30,6 +35,11 @@ class ClientController
     }
 
     public function update(): void {
+        if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $id = $_POST['id'];
         $data = [
             'name' => $_POST['name'],
@@ -41,6 +51,11 @@ class ClientController
     }
 
     public function destroy(): void {
+        if($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $id = $_GET['delete'];
         $this->model->delete($id);
         $this->reloadPage();

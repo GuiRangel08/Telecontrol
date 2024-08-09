@@ -47,6 +47,11 @@ class ServiceOrderController
     }
 
     public function update(): void {
+        if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $id = $_POST['order_id'];
         $data = [
             'number' => $_POST['order_number'],
@@ -61,6 +66,11 @@ class ServiceOrderController
     }
 
     public function destroy(): void {
+        if($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $id = $_GET['delete'];
         $this->model->delete($id);
         $this->reloadPage();

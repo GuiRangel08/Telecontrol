@@ -8,6 +8,11 @@ class HomeController
 
     public function index()
     {
+        if($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            echo "metodo incorreto para a rota";
+            die;
+        }
+
         $this->reloadPage();
     }
 

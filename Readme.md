@@ -2,9 +2,14 @@
 
 ## Como executar o teste
 
-- Após clonar o repositório, libere as permissões de pasta para evitar qualquer problema.
+- execute o comando `docker compose up -d` e aguarde o build da imagem
+- acesse no navegador http://localhost:8080/
 
-### Versão das técnologias utilizadas
+### Observações
+- Após clonar o repositório, libere as permissões de pasta para evitar qualquer problema.
+- É necessário instalar todas as dependencias para utilizar
+
+### dependencias do projeto
 - php 8.2
 - postgres v13
 - docker v27.1.1

@@ -6,7 +6,7 @@
 - acesse no navegador http://localhost:8080/
 
 ### Observações
-- Após clonar o repositório, libere as permissões de pasta para evitar qualquer problema.
+- Após clonar o repositório e buildar a imagem docker, libere as permissões de pasta para evitar qualquer problema.
 - É necessário instalar todas as dependencias para utilizar
 
 ### dependencias do projeto

@@ -29,10 +29,8 @@ RUN docker-php-ext-install -j$(nproc) \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer install --no-scripts --no-autoloader
-
 RUN chmod -R 777 /var/www/html
 
-EXPOSE 80
+CMD composer install && apache2-foreground
 
-CMD ["apache2-foreground"]
+EXPOSE 80

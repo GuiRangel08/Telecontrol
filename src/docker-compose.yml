@@ -1,0 +1,22 @@
+services:
+  postgres:
+    container_name: db-telecontrol
+    image: postgres:13
+    volumes:
+      - ./database/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: telecontrol
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+
+  php:
+    container_name: php-fpm-server-telecontrol
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
